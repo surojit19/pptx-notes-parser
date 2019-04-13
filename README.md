@@ -17,11 +17,11 @@ clone it on your machine by running the following command:
 
 ### __Configurations in file demo.js__
 
-- below you can see self-explanatory configuration in demo.js
+- below you can see self-explanatory configuration in ___demo.js___.
 
         const pptxFile = <- FileName ->;
 
-- File name of pptx. For eg. "abc.pptx" or "files/abc.pptx" etc.
+- File name of pptx. For eg. "abc.pptx" or "files/abc.pptx" etc. Do remember to put the file ;)
 
         const _SEPARATOR = {
             
@@ -36,6 +36,16 @@ clone it on your machine by running the following command:
 
         const _RESTYPES = ['QUIZ','VIMEO','XAPI'];
 
-
 ---
 
+### __Teacher Notes Examples___
+
+        @@SLIDE@@
+        2
+        @@TNOTES@@
+        Here goes the additional notes
+        @@QUIZ@@
+        GIFT FORMAT quiz text can be 
+        pumpedin here as well
+
+---
