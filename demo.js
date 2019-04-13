@@ -3,6 +3,8 @@ const _ = require('lodash');
 
 //=========== Configurations ============
 
+const isLocal = false; // true or false , if false then it should be url
+
 const pptxFile = 'abc.pptx';
 
 const _SEPARATOR = {
@@ -55,12 +57,17 @@ const extractElements = function (s){
 
 //== Extract pptx texts
 
-Textact.fromFileWithPath(pptxFile,{ preserveLineBreaks: true }, (tnotes,text) => {
+const cb = function (tnotes,text) {
 
     let slides = extractSlides(tnotes);
 
     slides = _.map(slides, slide => extractElements(_slideSeparator + slide));
 
-    console.log(slides);
-    
-});
+    console.log(slides);    
+}
+
+if(isLocal){
+    Textact.fromFileWithPath(pptxFile,{ preserveLineBreaks: true }, cb);
+}else{
+    Textact.fromUrl(pptxFile,{ preserveLineBreaks: true }, cb);
+}   

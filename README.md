@@ -19,7 +19,17 @@ clone it on your machine by running the following command:
 
 - below you can see self-explanatory configuration in ___demo.js___.
 
-        const pptxFile = <- FileName ->;
+
+
+- isLocal  & pptxFile
+
+        const isLocal = false;
+        
+    - if set to true, means the file is picked from the server itself, 
+    - if set to false, means the pptxFile variable should be a valid URL.
+
+
+            const pptxFile = <- FileName ->;
 
 - File name of pptx. For eg. "abc.pptx" or "files/abc.pptx" etc. Do remember to put the file ;)
 
