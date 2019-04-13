@@ -65,6 +65,8 @@ const cb = function (tnotes,text) {
 
     slides = _.map(slides, slide => extractElements(_slideSeparator + slide));
 
+    slides = {"slides": slides};
+
     console.log(slides);    
 }
 
