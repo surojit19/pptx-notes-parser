@@ -11,27 +11,14 @@ clone it on your machine by running the following command:
 3. copy node_modules_work over node_modules
 
         This will copy textract node module work done over its native one.
-4. node demo.js
+4. node demo.js <-filepath-> ___OR___
+5. node demo.js <-filepath-> local ___OR___
 
 ---
 
 ### __Configurations in file demo.js__
 
 - below you can see self-explanatory configuration in ___demo.js___.
-
-
-
-- isLocal  & pptxFile
-
-        const isLocal = false;
-        
-    - if set to true, means the file is picked from the server itself, 
-    - if set to false, means the pptxFile variable should be a valid URL.
-
-
-            const pptxFile = <- FileName ->;
-
-- File name of pptx. For eg. "abc.pptx" or "files/abc.pptx" etc. Do remember to put the file ;)
 
         const _SEPARATOR = {
             

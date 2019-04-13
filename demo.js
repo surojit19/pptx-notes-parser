@@ -1,11 +1,13 @@
 const Textact = require('textract');
 const _ = require('lodash');
 
+const args = process.argv.slice(2);
+
+const isLocal = _.get(args,'1',null) == 'local' ? true : false; // true or false , if false then it should be url
+
+const pptxFile = args[0];
+
 //=========== Configurations ============
-
-const isLocal = false; // true or false , if false then it should be url
-
-const pptxFile = 'abc.pptx';
 
 const _SEPARATOR = {
     'wrapper'   : '@@',
