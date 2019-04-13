@@ -67,7 +67,7 @@ const cb = function (tnotes,text) {
 
     slides = {"slides": slides};
 
-    console.log(slides);    
+    console.log(JSON.stringify(slides));    
 }
 
 if(isLocal){
