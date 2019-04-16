@@ -10,9 +10,15 @@ clone it on your machine by running the following command:
 2. npm install
 3. copy node_modules_work over node_modules
 
+        >> cp node_modules_work/textract/lib/extractors/pptx.js node_modules/textract/lib/extractors/pptx.js -f
+
         This will copy textract node module work done over its native one.
-4. node demo.js <-filepath-> ___OR___
-5. node demo.js <-filepath-> local ___OR___
+
+4. To run the code:
+
+                node demo.js <-url-> 
+                        OR
+                node demo.js <-filepath-> local 
 
 ---
 

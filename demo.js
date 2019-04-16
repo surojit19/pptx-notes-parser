@@ -23,9 +23,15 @@ const _RESTYPES = ['QUIZ','VIMEO','XAPI'];
 const _slideSeparator = `${_SEPARATOR.wrapper}${_SEPARATOR.slide}${_SEPARATOR.wrapper}`;
 
 
-const extractSlides = function (txt){    
+const extractSlides = function (txt){      
     txt = txt.split(_slideSeparator);    
     txt = txt.slice(1);
+    return txt;
+}
+
+const santisizeText = function (txt){
+    txt = txt.replace(/\n([0-9]{1,3})$/,''); //== remove pages
+    txt = txt.trim(); //== trim extra chars
     return txt;
 }
 
@@ -46,11 +52,11 @@ const extractElements = function (s){
         }
 
         if(k==_SEPARATOR.slide || k==_SEPARATOR.tnotes){
-            tmp[k] = s[a+1];
+            tmp[k] = santisizeText(s[a+1]);
         }
         else{
             tmp['type'] = k;
-            tmp['content'] = s[a+1];
+            tmp['content'] = santisizeText(s[a+1]);
         }
     });
 
@@ -67,7 +73,7 @@ const cb = function (tnotes,text) {
 
     slides = {"slides": slides};
 
-    console.log(JSON.stringify(slides));    
+    console.log(JSON.stringify(slides));
 }
 
 if(isLocal){
